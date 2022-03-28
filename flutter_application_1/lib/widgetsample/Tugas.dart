@@ -1,209 +1,151 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(
-      //   backgroundColor: Colors.blue[900],
-      // ),
-         home: Scaffold(
-          appBar: AppBar(title: Text('News App',textAlign: TextAlign.center,) ,backgroundColor: Colors.indigo[900],),
+    title: 'Flutter Demo',
+    theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.red,
+    ),
+      home: Scaffold(
+          appBar :AppBar(title: Text("MyApp Lailatul Mufida")
+          ),
           body: ListView(
             children: <Widget>[
-               Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                 children: <Widget>[
-                
-              Container(
-                
-                alignment: Alignment.centerLeft,
-                child: CupertinoButton(
-                  child: Text(
-                    'MENU MURAH',
-                    style: TextStyle(color: Colors.black, fontSize: 15),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                alignment: Alignment.centerRight,
-                child: CupertinoButton(
-                  child: Text(
-                    'TOP MENU',
-                    style: TextStyle(color: Colors.black, fontSize: 15),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-            ]),
-
-              Stack(
-                children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children:[
                 Container(
-                    color: Colors.indigo[800],                  
-                    alignment: Alignment.bottomLeft,
-                    child: CupertinoButton(
-                        child: Text("Top Up",
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white,),),
-                        onPressed: () {}),
-                    height: 290.0,
-                    width: 500.0,
-                    margin: EdgeInsets.all(1)
+                  alignment: Alignment.center ,
+                  child: const Text("BERITA TERBARU",
+                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        height: 40.0,
+                        width: 250.0,
+                ),
+                Container(
+                  alignment: Alignment.center ,
+                  child: const Text("PERTANDINGAN HARI INI",
+                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        height: 40.0,
+                        width: 250.0,
+                ),
+                ],
+              ),
+              Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.all(10),
+                decoration: BoxDecoration(border: Border.all(color:Colors.purple)),
+                child: Column(
+                  children: [
+                    const Image(image: NetworkImage(
+                      'https://pict-a.sindonews.net/dyn/620/content/2020/02/12/11/1524916/lima-pesepak-bola-yang-terkenal-dermawan-iYy-thumb.jpg'),
+                      height: 300,
+                      ),
+                    Container(
+                      alignment: Alignment.center,
+                      child:const Text("Costa Mendekat Ke Palmeiras",
+                      style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold)),
+                      height: 40,
                     ),
-                Container(
-                color: Colors.white,
-                alignment:Alignment.bottomCenter,
-                child: Text("Kebab Turki : Cabang Malang", style: TextStyle(fontSize:20,color:Colors.black,),),
-                margin: EdgeInsets.all(3),
-                padding: EdgeInsets.only(top: 20, bottom: 10),
-                height: 235.0,
-                width: 399.0,
+                    Container(
+                      color: Colors.purple,
+                      padding: const EdgeInsets.all(10),
+                      alignment: Alignment.centerLeft,
+                      child:const Text("Transfer",
+                      style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold)),
+                      height: 40,
+                    ),
+                  ],
                 ),
-                Container(             
-                  child: Image(  
-                      image: NetworkImage(
-                      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wearemania.net%2Fngalam%2Fdaftar-gerai-kebab-turki-baba-rafi-di-kota-malang%2F12843&psig=AOvVaw0Qa_lNS4fYVwv8-xCCw0Dv&ust=1645883652075000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPCO2s2Am_YCFQAAAAAdAAAAABAD',),     
-                      fit: BoxFit.fill,             
-                  ),
-                  margin: EdgeInsets.all(4),                                                          
-              ),             
-              ],
-              ),  
-              Column(
-              children: <Widget>[
-                Container(
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.black)),
-                  margin: EdgeInsets.fromLTRB(3, 15, 3, 0),
-                  child: Row(
-                    children: <Widget>[
-                      
-                      Container(
-                        child: Image(
-                          image: NetworkImage(
-                              'https://vagusnet.com/wp-content/uploads/2020/01/kebab-bbq.jpg'),
-                        ),
-                        height: 100,
-                      ),
-                      Container(
-                    
-                        padding: EdgeInsets.only(left:7),
-                        alignment: Alignment.centerLeft,
-                      ),
-                      Flexible(
-                        child: Text(
-                            "Kebab Double Beef",
-                            // overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.black)),                         
-                      ),                      
-                    ],
-                  ),
-                  
-                ),
-              ],
               ),
-              Column(
-              children: <Widget>[
-                Container(
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.black)),
-                  margin: EdgeInsets.fromLTRB(3, 15, 3, 0),
-                  child: Row(
-                    children: <Widget>[
+              Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.all(10),
+                child: Column(
+                  children: [
                       Container(
-                        child: Image(
-                          image: NetworkImage(
-                              'https://vagusnet.com/wp-content/uploads/2020/01/kebab-bbq.jpg'),
-                        ),
-                        height: 100,
+                         decoration:BoxDecoration(border: Border.all(color: Colors.black)),
+                          child: Row(
+                            children: [
+                             const Image(image: NetworkImage(
+                               'https://akcdn.detik.net.id/community/media/visual/2022/02/09/burnley-vs-mu_169.jpeg?w=700&q=90'),
+                             height: 100,
+                              ),
+                              Container(
+                                  padding: const EdgeInsets.all(10),
+                                  alignment: Alignment.center,
+                                  margin: const EdgeInsets.all(10),
+                                  child: const Text("Pique Bilang Wasit Untungkan Madrid, Koeman Tepok Jidat ",
+                                  style: TextStyle(fontSize: 15,color: Colors.black, fontWeight: FontWeight.bold)),
+                                  width: 250,
+                              ),
+                            ],
+                          ),
                       ),
                       Container(
-                    
-                        padding: EdgeInsets.only(left:7),
+                        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                        padding: const EdgeInsets.all(10),
                         alignment: Alignment.centerLeft,
-                      ),
-                      Flexible(
-                            child: Text(
-                            "Kebab Chiken",
-                            //  overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.black)),    
-                      ),
-                    ],
+                        child: const Text('Barcelona Feb 13, 2021',
+                        style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold)),
+                        height: 40,
+                      )
+                  ]),
                   ),
-                ),
-              ],
+                  Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                      Container(
+                         decoration:BoxDecoration(border: Border.all(color: Colors.black)),
+                          child: Row(
+                            children: [
+                             const Image(image: NetworkImage(
+                               'https://akcdn.detik.net.id/community/media/visual/2022/02/09/burnley-vs-mu_169.jpeg?w=700&q=90'),
+                             height: 100,
+                              ),
+                              Container(
+                                  padding: const EdgeInsets.all(10),
+                                  alignment: Alignment.center,
+                                  margin: const EdgeInsets.all(10),
+                                  child: const Text("Pique Bilang Wasit Untungkan Madrid, Koeman Tepok Jidat ",
+                                  style: TextStyle(fontSize: 15,color: Colors.black, fontWeight: FontWeight.bold)),
+                                  width: 250,
+                              ),
+                            ],
+                          ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                        padding: const EdgeInsets.all(10),
+                        alignment: Alignment.centerLeft,
+                        child: const Text('Barcelona Feb 13, 2021',
+                        style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold)),
+                        height: 40,
+                      )
+                  ]),
+                  ),
+                ],
               ),
-              Column(
-              children: <Widget>[
-                Container(
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.black)),
-                  margin: EdgeInsets.fromLTRB(3, 15, 3, 0),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        child: Image(
-                          image: NetworkImage(
-                              'https://vagusnet.com/wp-content/uploads/2020/01/kebab-bbq.jpg'),
-                        ),
-                        height: 100,
-                      ),
-                      Container(                   
-                        padding: EdgeInsets.only(left:7),
-                        alignment: Alignment.centerLeft,
-                      ),
-                      Flexible(
-                            child: Text(
-                            "Kebab + Telor",
-                            //  overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.black)),    
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-              ),
-              Column(
-              children: <Widget>[
-                Container(
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.black)),
-                  margin: EdgeInsets.fromLTRB(3, 15, 3, 0),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        child: Image(
-                          image: NetworkImage(
-                              'https://vagusnet.com/wp-content/uploads/2020/01/kebab-bbq.jpg'),
-                        ),
-                        height: 100,
-                      ),
-                      Container(                   
-                        padding: EdgeInsets.only(left:7),
-                        alignment: Alignment.centerLeft,
-                      ),
-                      Flexible(
-                            child: Text(
-                            "Kebab + Keju",
-                            //  overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.black)),    
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-              ),          
-            ],
-          ),
-        ),
-    );
+            ) 
+    ); 
   }
 }
